@@ -1,0 +1,193 @@
+\documentclass{ujarticle}
+
+\usepackage{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage[dvipdfmx]{hyperref}
+\geometry{truedimen, mag=1200} %フォントサイズ指定(1000=10pt)
+\geometry{top=42mm, bottom=20mm, left=21mm, right=21mm, includefoot} %用紙設定
+\usepackage{comment}                      %\begin{comment}~\end{comment}で複数行コメント
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx, color}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{booktabs}
+\usepackage{subfigure}
+
+\usepackage{ascmac}
+\usepackage{here}
+\usepackage{txfonts}
+\usepackage{listings, jlisting}
+\usepackage{url}
+\usepackage{paralist}
+\usepackage[inline]{enumitem}
+\usepackage{caption}
+
+\renewcommand{\lstlistingname}{リスト}
+\def\doi#1{\normalfont DOI: #1}
+\lstset{language=c,
+  basicstyle=\ttfamily\scriptsize,
+  commentstyle=\textit,
+  classoffset=1,
+  keywordstyle=\bfseries,
+  frame=tRBl,
+  framesep=5pt,
+  showstringspaces=false,
+  numbers=left,
+  stepnumber=1,
+  numberstyle=\tiny,
+  tabsize=2,
+  breaklines=true,
+}
+
+% キャプション文字を小さめに
+\captionsetup{font=small}
+
+% ipsjunsrt.bstを使うための設定
+\makeatletter
+\def\urlj{%
+  \@ifnextchar[{\n@urlj}{\@urlj}%
+}
+
+\def\n@urlj[#1]#2{%
+  \normalfont
+  \if #11\relax
+    入手先\\
+  \else
+  \fi
+  \normalfont $\langle$\nobreak#2\nobreak$\rangle$%
+}
+
+\def\@urlj#1{%
+  \normalfont 入手先$\langle$\nobreak#1\nobreak$\rangle$%
+}
+
+\def\urle{%
+  \@ifnextchar[{\n@urle}{\@urle}%
+}
+
+\def\n@urle[#1]#2{%
+  \normalfont
+  \if #11\relax
+    available \\ from
+  \else
+  \fi
+  $\langle$\nobreak#2\nobreak$\rangle$%
+}
+
+\def\@urle#1{%
+  \normalfont available from $\langle$\nobreak#1\nobreak$\rangle$%
+}
+
+\def\refdatej#1{\normalfont （参照{#1}）\<}
+\def\refdatee#1{\normalfont (accessed {#1})}
+\def\doi#1{\normalfont DOI: #1}
+
+\def\acknowledgment{\par
+  \ifDS@english
+    {\bfseries{Acknowledgments}}\hskip1em\ignorespaces
+  \else
+    {\bfseries{謝辞}}\hskip1\zw\ignorespaces
+  \fi
+}
+\def\：{：}
+\makeatother
+
+%%% Sectionの設定 %%%
+\makeatletter
+\renewcommand{\section} {\@startsection{section}{1}{\z@} %
+    {.9\Cvs \@plus.5\Cdp \@minus.2\Cdp} %
+    {.5\Cvs \@plus.3\Cdp} %
+    {\reset@font\Large\bfseries}}
+
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@} %
+    {.7\Cvs \@plus.5\Cdp \@minus.2\Cdp} %
+    {.3\Cvs \@plus.3\Cdp} %
+    {\reset@font\normalsize\bfseries}}
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@} %
+    {0.5\Cvs \@plus.5\Cdp \@minus.2\Cdp}  % original: 1.5
+    {0.2\Cvs \@plus.3\Cdp} % 0.5
+    {\reset@font\normalsize\bfseries}}
+
+\newcommand{\Section}[1]{\section*{#1}
+\addcontentsline{toc}{section}{#1}}
+\makeatother
+
+\begin{document}
+
+%%%%%%%%%% 表紙 %%%%%%%%%%
+\thispagestyle{empty}   %表紙のみページ番号なし
+\setcounter{page}{0}    %表紙を0ページ目に設定
+
+\begin{center}
+{\Large
+  令和XX年度 卒業論文
+} \\
+\vspace{9mm}
+{\LARGE
+ 【論文タイトル】
+} \\
+\end{center}
+
+\vspace{30mm}
+\begin{table}[hb]
+\begin{center}
+{\Large
+\begin{tabular*}{12.5cm}{p{6.25cm}p{6.25cm}}
+  &\rule[0mm]{0mm}{0mm} \\
+  \multicolumn{2}{c}{電気通信大学 情報理工学域} \\
+  \multicolumn{2}{c}{I類 コンピュータサイエンスプログラム} \\
+  \multicolumn{1}{r}{学籍番号} & XXXXXXX \rule[0mm]{0mm}{6.5mm}\\
+  \multicolumn{1}{r}{氏名} & 【氏名】 \\
+  \multicolumn{1}{r}{指導教員} & 矢﨑 俊志\\
+  \multicolumn{2}{c}{令和XX年X月XX日} \rule[0mm]{0mm}{6.5mm}\\
+\end{tabular*}
+}
+\end{center}
+\end{table}
+
+\newpage
+%%%%%%%%%% 概要 %%%%%%%%%%
+\input{sections/1-abstract.tex}
+
+\newpage
+
+
+%%%%%%%%%% 目次 %%%%%%%%%%
+\tableofcontents
+\clearpage
+
+%%%%%%%%%% はじめに %%%%%%%%%%
+\input{sections/2-introduction.tex}
+\clearpage
+%%%%%%%%%% 背景知識 %%%%%%%%%%
+\input{sections/3-background.tex}
+\clearpage
+%%%%%%%%%% 実装に関して %%%%%%%%%%
+\input{sections/4-suggest.tex}
+\clearpage
+%%%%%%%%%% 評価 %%%%%%%%%%
+\input{sections/5-evaluation.tex}
+\clearpage
+% %%%%%%%%%% 考察 %%%%%%%%%%
+% \input{sections/6-discuttion.tex}
+% \clearpage
+%%%%%%%%%% 終わりに %%%%%%%%%%
+\input{sections/7-final.tex}
+\newpage
+%%%%%%%%%% 謝辞 %%%%%%%%%%
+\Section{謝辞} %番号なしセクションにする
+
+本研究を進めるにあたり，研究テーマや方針について多大なるご指導を賜りました矢﨑 俊志先生に心より感謝申し上げます．
+また，日頃より支えてくださった家族に対しても，ここに感謝の意を表します．
+
+\clearpage
+%%%%%%%%%% 参考文献 %%%%%%%%%%
+\addcontentsline{toc}{section}{参考文献}
+\bibliographystyle{ipsjunsrt} %番号なしのセクションにする
+\bibliography{export} %本やWebなども含める(20,30ぐらい)
+\clearpage
+%%%%%%%%%% 付録 %%%%%%%%%%
+\input{sections/8-appendix.tex}
+\end{document}

@@ -30,19 +30,19 @@
 
 \subsubsection{結果}
 図\ref{fig:throughput_small} に小規模環境におけるスループット改善率の比較を示す．
-\begin{figure}
+\begin{figure}[htbp]
   \centering
-  \includegraphics[htbp]{throughput_boxplot.png}
-  \caption{Caption}
+  \includegraphics[width=0.8\linewidth]{fig/throughput_boxplot.png}
+  \caption{スループット改善率}
   \label{fig:throughput_small}
 \end{figure}
 提案手法を適用した場合，ランダム移動と比較してシステム全体のスループット改善率の平均値が約 $24.6\%$ 高い結果となった．\\
 
 図\ref{fig:moving_small} に小規模環境におけるユーザごとの移動距離の分布を示す．
-\begin{figure}
+\begin{figure}[htbp]
   \centering
-  \includegraphics[htbp]{moving_boxplot.png}
-  \caption{Caption}
+  \includegraphics[width=0.8\linewidth]{fig/moving_boxplot.png}
+  \caption{移動距離の平均値}
   \label{fig:moving_small}
 \end{figure}
 提案手法ではユーザの移動が1m以下に抑えられていることが確認できる．
@@ -108,10 +108,10 @@
 このモデルは，チャネル使用率がトラフィック負荷の増加に対して飽和特性を示すという観測結果に基づいている．
 
 以下に，シミュレーション結果をグラフにプロットしたものを示す．
-\begin{figure}
+\begin{figure}[htbp]
   \centering
-  \includegraphics[htbp]{cu_0119_1st.png}
-  \caption{Caption}
+  \includegraphics[width=0.8\linewidth]{fig/cu_0119_1st.png}
+  \caption{シミュレーションにおける測定結果}
   \label{fig:fitting_1}
 \end{figure}
 

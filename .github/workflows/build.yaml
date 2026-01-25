@@ -14,20 +14,16 @@ env:
 jobs:
   release:
     runs-on: ubuntu-latest
-    container: aruneko/texlive
+    container: texlive/texlive
     steps:
       - name: Checkout git repo
         uses: actions/checkout@v4
-
-      - name: Install missing TeX packages
-        run: |
-          tlmgr install algorithms
 
       - name: Build a PDF file by latexmk
         run: latexmk $FILENAME.tex
 
       - name: Set tagname
-        run: echo "TAG_NAME=$(date +'%Y%m%d%H%M')" >> $GITHUB_ENV
+        run: echo "TAG_NAME=$(TZ=Asia/Tokyo date +'%Y%m%d%H%M')" >> $GITHUB_ENV
 
       - name: Create a release
         uses: softprops/action-gh-release@v2

@@ -19,6 +19,11 @@ jobs:
       - name: Checkout git repo
         uses: actions/checkout@v4
 
+      - name: Install missing TeX packages
+        run: |
+          tlmgr update --self
+          tlmgr install algorithms
+
       - name: Build a PDF file by latexmk
         run: latexmk $FILENAME.tex
 

@@ -1,10 +1,10 @@
 %%%%%%%%%% 背景知識 %%%%%%%%%%
 \section{背景知識}
 \subsection{無線LANの基礎技術\cite{nttwest2024},\cite{Wifistandard}}
-無線LAN(Wireless Local Area Network)は, IEEE 802.11標準規格に基づく無線通信技術により構築されるネットワークである.\
+無線LAN(Wireless Local Area Network)は, IEEE 802.11標準規格に基づく無線通信技術により構築されるネットワークである.
 システムは主にアクセスポイント(AP: Access Point)とクライアント端末から構成される．
 APが2.4GHz帯または5GHz帯(IEEE 802.11ax以降では6GHz帯も利用可能)の電波を用いてクライアントとの双方向通信を実現する.
-近年の規格発展により, IEEE 802.11ac(Wi-Fi 5)では最大6.9Gbps, IEEE 802.11ax(Wi-Fi 6)では最大9.6Gbpsの理論スループットが達成されている.\cite{Wifistandard}．
+近年の規格発展により, IEEE 802.11ac(Wi-Fi 5)では最大6.9Gbps, IEEE 802.11ax(Wi-Fi 6)では最大9.6Gbpsの理論スループットが達成されている．
 しかし, 実環境では後述する様々な要因により, 実効スループットは理論値を大きく下回ることが知られている.
 \subsection{無線LANの通信方式\cite{Wifistandard}}
 無線LANは, Carrier Sense Multiple Access with Collision Avoidance(CSMA/CA)方式を採用している.
@@ -16,7 +16,7 @@ APが2.4GHz帯または5GHz帯(IEEE 802.11ax以降では6GHz帯も利用可能)�
 ACKが受信されない場合, 送信側は再送を行うことで信頼性の高い通信を実現している.
 \subsection{無線LANのチャネルと周波数帯域\cite{Wifistandard}}
 無線LANは, 2.4GHz帯と5GHz帯,6GHz帯の周波数帯域を利用して通信を行う.
-2.4GHz帯は, 電波の到達距離が長く, 障害物に対する透過性が高い一方で, 他の無線機器(電子レンジ,Bluetooth機器など)との干渉が発生しやすい.%参考文献
+2.4GHz帯は, 電波の到達距離が長く, 障害物に対する透過性が高い一方で, 他の無線機器(電子レンジ,Bluetooth機器など)との干渉が発生しやすい\cite{FURUNO2024}.%参考文献
 一方, 5GHz帯は, より広い帯域幅を提供し, 高速な通信が可能であるが, 電波の到達距離が短く, 障害物による減衰が大きいという特性がある.
 無線LANでは, 複数のチャネルが定義されており, 各チャネルは特定の周波数範囲を占有する.
 2.4GHz帯では, 通常1～14チャネルが利用可能であり, 各チャネルは20MHzの帯域幅を持つ．

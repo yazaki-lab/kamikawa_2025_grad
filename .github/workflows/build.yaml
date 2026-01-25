@@ -21,7 +21,6 @@ jobs:
 
       - name: Install missing TeX packages
         run: |
-          tlmgr update --self
           tlmgr install algorithms
 
       - name: Build a PDF file by latexmk

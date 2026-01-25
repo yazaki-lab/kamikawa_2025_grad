@@ -34,7 +34,7 @@
 図\ref{fig:throughput_small} に小規模環境におけるスループット改善率の比較を示す．
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{fig/throughput_boxplot.png}
+  \includegraphics[width=0.6\linewidth]{fig/throughput_boxplot.png}
   \caption{スループット改善率}
   \label{fig:throughput_small}
 \end{figure}
@@ -43,7 +43,7 @@
 図\ref{fig:moving_small} に小規模環境におけるユーザごとの移動距離の分布を示す．
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{fig/moving_boxplot.png}
+  \includegraphics[width=0.6\linewidth]{fig/moving_boxplot.png}
   \caption{移動距離の平均値}
   \label{fig:moving_small}
 \end{figure}
@@ -121,7 +121,7 @@ LやNの係数がRに比べ極端に大きく，各値の影響を正当に表�
 以下に，シミュレーション結果をグラフにプロットしたものを示す．
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.8\linewidth]{fig/3dgraph_measured.png}
+  \includegraphics[width=0.6\linewidth]{fig/3dgraph_measured.png}
   \caption{シミュレーションにおける測定結果}
   \label{fig:fitting_1}
 \end{figure}
@@ -168,6 +168,15 @@ U(L, R, N) = 88.64 \left( 1 - \exp\left( - \left(
 一方，端末数 $N$ の係数 $c$ が負であることは，
 端末数の増加によりチャネル競合が激化し，
 単位時間あたりに観測される有効な送信割合が低下する影響を反映していると考えられる．
+
+この式によって計算された値と実測値(代表点)を比較したのが以下の図である．
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig/RSSIvsUtilization.png}
+  \caption{計算値と測定結果の比較}
+  \label{fig:fitting_2}
+\end{figure}
+
 
 \subsubsection{考察}
 実験結果から，提案する指数関数型飽和モデルは，

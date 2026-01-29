@@ -97,3 +97,264 @@
   year         = {2024},
   refdate      = {2026/1/25}
 }
+
+
+
+%%%%%%%%%%IOT72より%%%%%%%%%%%%%
+
+@article{ogawa2023,
+  abstract = {It is assumed that QoE degrades when multiple devices simultaneously connect with AP and RSSI of each device is low under Wi-Fi. Therefore, it is important that players such as communication and content providers understand the impact of these Wi-Fi environments on QoE. However, conventional studies have not experimentally clarified the relationship between these Wi-Fi environment and QoE. Thus, this paper describes this relationship from our measuring results of Web QoE under the number of simultaneous connecting devices and RSSI change with commodity WI-Fi devices.},
+  author = {Hideki Ogawa and Taichi Kawano and Masayoshi Nabeshima and Tomoki Murakami},
+  keywords = {Web QoE,Wi-Fi,the number of simulataneous connecting devices,RSSI},
+  month = {5},
+  title = {QoE Evaluation of the Effect of the Number of Simultaneous Connecting Devices and RSSI under Wi-Fi},
+  journal = {IEICE Technical Report},
+  volume = {123},
+  number = {45},
+  pages = {1-6},
+  year = {2023}
+}
+
+@article{Ogawa2021,
+  abstract = {It is assumed that QoE degrades when multiple devices simultaneously connect with AP and RSSI of each device is low under Wi-Fi. Therefore, it is important that players such as communication and content providers understand the impact of these Wi-Fi environments on QoE. However, conventional studies have not experimentally clarified the relationship between these Wi-Fi environment and QoE. Thus, this paper describes this relationship from our measuring results of Web QoE under the number of simultaneous connecting devices and RSSI change with commodity WI-Fi devices.},
+  author = {Hideki Ogawa and Taichi Kawano and Masayoshi Nabeshima and Tomoki Murakami},
+  keywords = {Web QoEWi-Fi,the number of simulataneous connecting devicesRSSI},
+  month = {5},
+  title = {QoE Evaluation of the Effect of the Number of Simultaneous Connecting Devices and RSSI under Wi-Fi},
+  year = {2021}
+}
+
+@misc{buffalo727WiFi,
+  author = {株式会社バッファロー},
+  title = {中小企業の72.7％が「家庭用{W}i-{F}iルーター」を業務利用していることが明らかに【中小企業の通信環境を調査】 --- buffalo.jp},
+  howpublished = {\url{https://www.buffalo.jp/press/detail/20230323-01.html}},
+  year = {},
+  note = {[Accessed 12-08-2025]},
+}
+
+@article{Miyata2012,
+  abstract = {We propose an optimal access-point (AP) selection algorithm for maximizing the aggregated throughput of each AP (system throughput) while preserving newly arrived-user throughput in multi rate WLAN system. In our algorithm, newly arrived users cooperate with a wireless local area network (WLAN) system they are trying to use, i.e., they are willing to move toward an appropriate AP before the newly arrived user connects to AP. To select the AP by using our AP selection algorithm, the newly arriving users request two novel parameter values, "the minimum acceptable throughput" with which newly arrived users can be satisfied and "the minimum movable distance" in which a user can move to an appropriate AP. While preserving these conditions, we maximize system throughput. When users cannot obtain a throughput greater than "the minimum acceptable throughput" with our proposed AP selection algorithm, they are rejected. Because, if users use streaming applications, which have strict bandwidth demands, with a very low bit-rate connection, they will not be satisfied. Thus, the newly arrived users having low bit-rate connection may be allowed to be rejected before the newly arrived user connects. In this paper, we show the optimal AP by using theoretical proof. We discuss the effectiveness of our proposed AP selection algorithm by using numerical analysis. We also clarify and analyze the characteristics of system throughput. Moreover, we show that a newly arrived user can select the movable distance and acceptable throughput by using examples from graphs depicting every position of newly arrived users. By using the graphs, we also show the relationship between the two parameters (the movable distance and the acceptable throughput) and the optimal AP, and the relationship between the two parameters and optimal system throughput when the movable distance and acceptable throughput are variable. Copyright © 2012 The Institute of Electronics, Information and Communication Engineers.},
+  author = {Sumiko Miyata and Tutomu Murase and Katsunori Yamaoka},
+  doi = {10.1587/transcom.E95.B.1953},
+  issn = {17451345},
+  issue = {6},
+  journal = {IEICE Transactions on Communications},
+  keywords = {AP selection,Cooperative user,Moving,System optimization,Throughput,User QoS},
+  pages = {1953-1964},
+  publisher = {Institute of Electronics, Information and Communication, Engineers, IEICE},
+  title = {Novel access-point selection for user QoS and system optimization based on user cooperative moving},
+  volume = {E95-B},
+  year = {2012}
+}
+
+@inproceedings{Ranasinghe2021,
+  abstract = {A graph neural network (GNN) based access point (AP) selection algorithm for cell-free mas-sive multiple-input multiple-output (MIMO) systems is proposed. Two graphs, a homogeneous graph which includes only AP nodes representing the structure of the APs in the network, and a heterogeneous graph which includes both AP nodes and user equipment (UE) nodes are constructed to represent a cell-free massive MIMO network. A GNN based on the inductive graph learning framework GraphSAGE is used to obtain the embed-dings which are then used to predict the links between the nodes. The numerical results show that compared to the proximity-based AP selection algorithms, the proposed GNN based algorithm predicts the potential APs with more accuracy. Compared to the large scale fading coefficient based AP selection algorithms, the proposed algorithm does not require measured and sorted signal strengths of all the neighbouring APs. Furthermore, the proposed algorithm is scalable in terms of the number of users in the cell-free system.},
+  author = {Vismika Ranasinghe and Nandana Rajatheva and Matti Latva-Aho},
+  doi = {10.1109/GLOBECOM46510.2021.9685221},
+  issn = {25766813},
+  booktitle = {Proceedings - IEEE Global Communications Conference, GLOBECOM},
+  keywords = {AP selection,cell-free massive MIMO,graph neural network},
+  title = {Graph Neural Network Based Access Point Selection for Cell-Free Massive MIMO Systems},
+  year = {2021}
+}
+
+@article{Wu2024,
+  abstract = {Wireless Local-Area Networks (WLANs), as a popular internet access solution, are widely used in numerous places, including enterprises, campuses, and public venues. As the number of devices increases, large-scale deployments will cause the problem of dense wireless networks, including a lot of energy consumption. Thus, the optimization of energy-efficient wireless AP devices has become a focal point of attention. To reduce energy consumption, we have proposed the active access-point (AP) configuration algorithm for WLANs using APs with a dual interface. This uses the greedy algorithm combined with the local search optimization method to find the minimum number of activated APs while satisfying the minimum throughput constraint. However, the previous algorithm basically satisfies only the average throughput among the multiple hosts associated with one AP, wherein some hosts may not reach the required one. In this paper, to overcome this limitation, we propose an enhanced active AP configuration algorithm by incorporating the throughput request satisfaction method that controls the actual throughput at the target value (target throughput) for every host by applying traffic shaping. The target throughput is calculated from the single and concurrent communicating throughput of each host based on channel occupancy time. The minimum throughput constraint will be iteratively adjusted to obtain the required target throughput and achieve the fair throughput allocation. For evaluations, we conducted simulations using the WIMNET simulator and experiments using the testbed system with a Raspberry Pi 4B for APs in four topology cases with five APs and ten hosts. The results show that the proposed method always achieved the required minimum throughput in simulations as well as in experiments, while minimizing the number of active APs. Thus, the validity and effectiveness of our proposal were confirmed.},
+  author = {Bin Wu and Nobuo Funabiki and Dezheng Kong and Xuan Wang and Taishiro Seto and Yu Cheng Fan},
+  doi = {10.3390/sym16081005},
+  issn = {20738994},
+  issue = {8},
+  journal = {Symmetry},
+  keywords = {IoT,active AP configuration algorithm,energy-efficient WLAN,throughput control,throughput request satisfaction method,traffic shaping},
+  month = {8},
+  pages = {1005},
+  publisher = {Multidisciplinary Digital Publishing Institute (MDPI)},
+  title = {An Enhanced Active Access-Point Configuration Algorithm Using the Throughput Request Satisfaction Method for an Energy-Efficient Wireless Local-Area Network},
+  volume = {16},
+  year = {2024}
+}
+
+@article{GaonaJurez2025,
+  abstract = {This article describes the design, implementation, and evaluation of an indoor localization system based on Received Signal Strength Indicator (RSSI) measurements in wireless sensor networks. While the majority of the literature uses the IEEE 802.15 standard for this type of system, all of the measurements in this study were performed using a test bench operating under the IEEE 802.11ax standard in the 2.4 GHz band. RSSI is widely used due to its simplicity and availability; however, its accuracy is limited by signal attenuation, electromagnetic interference, and environmental variability. To mitigate these limitations, the present work proposes the implementation of advanced techniques, including weighted averages and positioning algorithms such as Min–Max, Maximum Likelihood, and trilateration, aiming to achieve an accuracy of 2 m in controlled conditions. The design also included a specialized test bench to calculate the coordinates and estimate the location of unknown nodes using anchor node positioning. This approach combines the simplicity of RSSI with optimized algorithms, providing a robust and practical solution for indoor localization. The results validate the system's effectiveness and highlight its potential for future applications in real-world environments, opening new possibilities for optimizing wireless sensor networks and addressing the current challenges in localization systems.},
+  author = {Roberto Gaona Juárez and Abel García-Barrientos and Jesus Acosta-Elias and Enrique Stevens-Navarro and César G. Galván and Alessio Palavicini and Ernesto Monroy Cruz},
+  doi = {10.3390/app15052620},
+  issn = {20763417},
+  issue = {5},
+  journal = {Applied Sciences (Switzerland)},
+  keywords = {IEEE 802.11ax,IEEE 802.15,IoT,RSSI,indoor localization,wireless sensor networks},
+  month = {3},
+  pages = {2620},
+  publisher = {Multidisciplinary Digital Publishing Institute (MDPI)},
+  title = {Design and Implementation of an Indoor Localization System Based on RSSI in IEEE 802.11ax},
+  volume = {15},
+  year = {2025}
+}
+
+@misc{ChannelU57:online,
+author = {},
+  title = {Channel Utilization – Plasma Cloud},
+  url = "https://support.plasma-cloud.com/hc/en-us/articles/12710618586141-Channel-Utilization",
+month = {7},
+year = {2025},
+  note = "[Online; accessed 2025-08-19]"
+}
+
+@misc{Low_rate_WiFi_Technical_Notes:online,
+author = {},
+  title = {低いレートによりWi-Fi のパフォーマンス低下 – Technical Notes},
+  url = "https://hantechnote.wordpress.com/2021/08/12/%E4%BD%8E%E3%81%84%E3%83%AC%E3%83%BC%E3%83%88%E3%81%AB%E3%82%88%E3%82%8Awi-fi-%E3%81%AE%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E4%BD%8E%E4%B8%8B/",
+month = {8},
+year = {2021},
+  note = "[Online; accessed 2025-08-19]"
+}
+
+@inproceedings{Rowden2023,
+  abstract = {WiFi networks are essential to our daily lives, but their signals are not visible to us. Therefore, it is challenging to evaluate the health of a network or make changes to ensure an optimal configuration. Traditional visualization approaches, such as contour lines, are not intuitive and lead to challenges in the analysis and comprehension of networks. In this paper, we introduce two novel visualizations: Wavelines and Stacked Bars. We then compared these visualizations to the state-of-the-art visualization technique of contour lines. We carried out a user study with 32 participants to validate that our novel visualizations can improve user confidence, accuracy, and completion time for the tasks of router localization, ranking of signal strengths, channel interference, and router coverage. We selected these tasks after extensive discussions with domain experts. We believe that our findings will assist network analysts in visually understanding our increasingly rich signal environments.},
+  author = {Alexander Rowden and Eric Krokos and Kirsten Whitley and Amitabh Varshney},
+  doi = {10.1109/ISMAR59233.2023.00088},
+  isbn = {9798350328387},
+  booktitle = {Proceedings - 2023 IEEE International Symposium on Mixed and Augmented Reality, ISMAR 2023},
+  keywords = {Application Motivated Visualization,Data Analysis,Human-Subjects Qualitative Studies,Human-Subjects Quantitative Studies,Immersive,Scalar Field Data,Virtual Reality},
+  pages = {732-740},
+  publisher = {Institute of Electrical and Electronics Engineers Inc.},
+  title = {Exploring Effective Immersive Approaches to Visualizing WiFi},
+  year = {2023}
+}
+
+@misc{netone2015,
+author = {NET ONE SYSTEMS},
+  title = {第1回 電波干渉！？ 無線LANのトラブルから学ぶシリーズ その1 | ネットワンシステムズ},
+  url = "https://www.netone.co.jp/knowledge-center/blog-column/knowledge_takumi_021/",
+month = {5},
+year = {2015},
+  note = "[Online; accessed 2025-08-20]"
+}
+
+@misc{ieee80211,
+  author = {{IEEE Standards Association}},
+  title = {IEEE Standard for Information technology-- Local and metropolitan area networks-- Specific requirements-- Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications Amendment 1: Radio Resource Measurement of Wireless LANs},
+  year = {2008},
+  note = "(Accessed 2026/1/25)"
+}
+
+@ARTICLE{bianchi2000,
+  author={Bianchi, Giuseppe},
+  journal={IEEE Journal on Selected Areas in Communications},
+  title={Performance analysis of the IEEE 802.11 distributed coordination function},
+  year={2000},
+  volume={18},
+  number={3},
+  pages={535-547},
+  keywords={Performance analysis;Access protocols;Media Access Protocol;Collision avoidance;Multiaccess communication;Analytical models;Wireless LAN;Throughput;Physical layer;Wireless application protocol},
+  doi={10.1109/49.840210}
+}
+
+@INPROCEEDINGS{zhao2013,
+  author={Zhao, Peng and Yang, Xinyu and Dong, Chiyong and Yang, Shusen and Bhattarai, Sulabh and Yu, Wei},
+  booktitle={2011 IEEE Global Telecommunications Conference - GLOBECOM 2011},
+  title={On an Efficient Estimation of Available Bandwidth for IEEE 802.11-Based Wireless Networks},
+  year={2011},
+  volume={},
+  number={},
+  pages={1-5},
+  keywords={Bandwidth;Estimation;Sensors;IEEE 802.11 Standards;Channel estimation;Peer to peer computing;Quality of service},
+  doi={10.1109/GLOCOM.2011.6134282}}
+
+
+@InProceedings{rossi2014,
+  author="Rossi, Claudio and Casetti, Claudio and Chiasserini, Carla-Fabiana",
+  editor="Guo, Song and Lloret, Jaime and Manzoni, Pietro and Ruehrup, Stefan",
+  title="A Passive Solution for Interference Estimation in WiFi Networks",
+  booktitle="Ad-hoc, Mobile, and Wireless Networks",
+  year="2014",
+  publisher="Springer International Publishing",
+  address="Cham",
+  pages="156--168",
+  abstract="Identifying the cause of an underperforming WLAN can be challenging due to the presence of a plethora of devices and networks operating in the ISM band. Such devices cause electromagnetic interference that can potentially undermine the throughput of residential and enterprise WiFi networks. In this paper, we propose an interference estimation and monitoring technique for 802.11 Access Points that can be implemented without specialized hardware and without any modification to wireless stations. We validate our technique with commercial hardware, evaluating its accuracy with different types of interferers.",
+  isbn="978-3-319-07425-2"
+}
+
+@inproceedings{gutterman2019,
+author = {Gutterman, Craig and Grinshpun, Edward and Sharma, Sameer and Zussman, Gil},
+title = {RAN Resource Usage Prediction for a 5G Slice Broker},
+year = {2019},
+isbn = {9781450367646},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3323679.3326521},
+doi = {10.1145/3323679.3326521},
+abstract = {Network slicing will allow 5G network operators to offer a diverse set of services over a shared physical infrastructure. We focus on supporting the operation of the Radio Access Network (RAN) slice broker, which maps slice requirements into allocation of Physical Resource Blocks (PRBs). We first develop a new metric, REVA, based on the number of PRBs available to a single Very Active bearer. REVA is independent of channel conditions and allows easy derivation of an individual wireless link's throughput. In order for the slice broker to efficiently utilize the RAN, there is a need for reliable and short term prediction of resource usage by a slice. To support such prediction, we construct an LTE testbed and develop custom additions to the scheduler. Using data collected from the testbed, we compute REVA and develop a realistic time series prediction model for REVA. Specifically, we present the X-LSTM prediction model, based upon Long Short-Term Memory (LSTM) neural networks. Evaluated with data collected in the testbed, X-LSTM outperforms Autoregressive Integrated Moving Average Model (ARIMA) and LSTM neural networks by up to 31\%. X-LSTM also achieves over 91\% accuracy in predicting REVA. By using X-LSTM to predict future usage, a slice broker is more adept to provision a slice and reduce over-provisioning and SLA violation costs by more than 10\% in comparison to LSTM and ARIMA.},
+booktitle = {Proceedings of the Twentieth ACM International Symposium on Mobile Ad Hoc Networking and Computing},
+pages = {231–240},
+numpages = {10},
+keywords = {Deep Learning, Mobile Traffic Forecasting},
+location = {Catania, Italy},
+series = {Mobihoc '19}
+}
+
+@ARTICLE{bakri2021,
+  author={Bakri, Sihem and Frangoudis, Pantelis A. and Ksentini, Adlen and Bouaziz, Maha},
+  journal={IEEE Transactions on Network and Service Management},
+  title={Data-Driven RAN Slicing Mechanisms for 5G and Beyond},
+  year={2021},
+  volume={18},
+  number={4},
+  pages={4654-4668},
+  keywords={Resource management;Monitoring;Ultra reliable low latency communication;Base stations;5G mobile communication;Channel estimation;Radio access networks;Network slicing;radio resource sharing;RAN monitoring;CQI;machine learning},
+  doi={10.1109/TNSM.2021.3098193}
+}
+
+@misc{ns3website,
+  author = {{NS-3 Project}},
+  title = {ns-3 Network Simulator},
+  howpublished = {\url{https://www.nsnam.org/}},
+  year = {2026},
+  note = "(Accessed 2026-01-26)"
+}
+
+@misc{juniper_rssi_roaming,
+  author = {{Juniper Networks}},
+  title = {RSSI-Based Fast Roaming},
+  howpublished = {\url{https://www.juniper.net/documentation/us/en/software/mist/mist-wireless/topics/topic-map/rssi-fast-roaming.html}},
+  year = {2025},
+  note = "(Accessed 2025-01-27)"
+}
+
+@misc{apple_deployment,
+  author = {{Apple Inc.}},
+  title = {Apple製品の導入ガイド},
+  howpublished = {\url{https://support.apple.com/ja-jp/guide/deployment/dep98f116c0f/web}},
+  year = {2025},
+  note = "(Accessed 2025-01-27)"
+}
+
+@misc{snr-to-mcs,
+  author = {wlanprofessionals.com},
+  howpublished = {\url{https://d2cpnw0u24fjm4.cloudfront.net/wp-content/uploads/LaminatedCard_MCSValuesforVariousSNR1.pdf}},
+  title = {Revolution WiFi MCS to SNR Levels},
+  year = {2017},
+  note = "(Accessed 2025-01-27)"
+}
+
+@misc{cisco-comm-guide-mcsindex,
+  author = {{Cisco Systems, Inc.}},
+  title = {Wi-Fi 6/6EおよびWi-Fi 7ワイヤレススループットの検証とテスト},
+  howpublished = {\url{https://www.cisco.com/c/ja_jp/support/docs/wireless-mobility/wireless-lan-wlan/212892-802-11ac-wireless-throughput-testing-and.html}},
+  year = {2025},
+  note = "(Accessed 2025-01-27)"
+}
+
+@inproceedings{kamikawa_ipsjiot71_2025,
+  author = {上川 雅弘 and 住吉 晶 and 松橋 拓人 and 矢崎 俊志},
+  issue = {14},
+  month = {Sep},
+  volume = {2025-IOT-71},
+  number = {14},
+  pages = {1-7},
+  booktitle = {情報処理学会研究会報告 インターネットと運用技術},
+  summary = {本稿では，無線LAN利用における利用者のQoEを向上させることを目的として，利用者がより快適な無線LAN接続を自らの行動で選ぶことができるよう，適切なアクセスポイントとその位置についての情報を利用者に提供する手法を提案する．提案手法では，過去に提案されたAPと利用者端末との距離に基づくAP選択を拡張し，APが使用しているチャネルの使用率を考慮することで，現実的な環境想定において，より合理的なAP選択を可能とする手法を提案した．提案手法について，典型的な無線LAN利用状況を想定したケーススタディを行い，提案手法がシステム全体のスループットを最大化する最適なAP選択を可能とすることを確認した．また，提案手法の利点と限界について，既存手法との比較結果を示した．},
+  title = {エンタープライズ無線LAN環境における通信品質改善のためのユーザ行動支援手法の提案},
+  year = {2025}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%

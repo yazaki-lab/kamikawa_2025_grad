@@ -32,7 +32,7 @@
 \subsubsection{入力情報と前提条件}
 
 提案アルゴリズムは，新規ユーザ$u$に対して以下の情報が与えられていることを前提とする．また，無線LAN環境内に存在するAPの集合を$A$とし，各AP $a \in A$に対して以下の情報が既知であると仮定する．
-表\ref{tab:input_info}に入力情報の一覧を示す．
+表\ref{tab:input_info}に入力情報の一覧を示す．なお，スループットの平均値は接続ユーザのスループットの調和平均として計算されるものとする．
 
 \begin{table}[h]
 \centering
@@ -41,7 +41,7 @@
 \begin{tabular}{l|l|l}
 \hline
 カテゴリ & パラメータ & 説明 \\ \hline \hline
-\multirow{3}{*}{ユーザ情報} 
+\multirow{3}{*}{ユーザ情報}
   & $P_u$ & 現在位置 \\
   & $d_{th}$ & 許容最大移動距離 \\
   & $\theta_{th}$ & 最低要求スループット \\ \hline
@@ -107,49 +107,63 @@ Score(a) = \sum_i w_i \cdot score_i(a)
 %
 \begin{algorithm}[tbh]
     \begin{algorithmic}[1]
-        \State \textbf{Input:} $P_u$（ユーザ位置）, $d_{th}$（移動閾値）, $\theta_{th}$（スループット閾値）, $A$（AP集合）
-        \State \textbf{Output:} $a^*$（最適AP）, $m^*$（最適移動ベクトル）
+        \State \textbf{Input:}
+        $P_u$（ユーザ現在位置）,
+        $d_{th}$（最大許容移動距離）,
+        $\theta_{th}$（最低要求スループット）,
+        $A$（AP集合）
+
+        \State \textbf{Output:}
+        $a^*$（選択AP）,
+        $m^*$（推奨移動ベクトル）
 
         \Statex
-        \State
-        \State $A_{cand} \gets \{a \in A | d_{u,a} \leq d_{th}\}$ where $d_{u,a} = |P_a - (P_u - m)|$ \Comment{式(1)(2)}
+        \Statex \Comment{--- AP候補抽出 ---}
+        \State $A_{cand} \gets \{ a \in A \mid \|P_a - P_u\| \le d_{th} \}$
 
         \Statex
-        \State
+        \Statex \Comment{--- 接続可否判定 ---}
         \For{each $a \in A_{cand}$}
-            \State $\theta_a^{before} \gets n_a / \sum_{i=1}^{n_a} (1/b_{i,a})$ \Comment{式(3)}
-            \State $\theta_{a,m}^{after} \gets (n_a + 1) / (n_a/\theta_a^{before} + 1/b_{new,a})$ \Comment{式(4)}
-            \If{$\theta_{new,a} < \theta_{th}$ or $|m| > d_{th}$} \Comment{式(5)による判定}
+            \State Compute $\theta_a^{before}$ using harmonic mean of existing users
+            \State Estimate $b_{new,a}$ from RSSI at $P_u$
+            \State Compute $\theta_{a,0}^{after}$ assuming no movement
+            \State Compute $\theta_{new,a,0}$ for the new user
+            \If{$\theta_{new,a,0} < \theta_{th}$}
                 \State $A_{cand} \gets A_{cand} \setminus \{a\}$
             \EndIf
         \EndFor
 
         \Statex
-        \State
+        \Statex \Comment{--- スコア計算 ---}
         \For{each $a \in A_{cand}$}
-            \State $score_{\theta_a} \gets (\theta_{a,m}^{after} - \theta_{min}) / (\theta_{\max} - \theta_{min})$ \Comment{式(6)}
-            \State $score_{d_{u,a}} \gets 1 - (d_{u,a} - d_{min}) / (d_{th} - d_{min})$ \Comment{式(7)}
-            \State $score_{U_c} \gets (1-U_c)$, $score_{n_a} \gets 1-(n_a / n_{\max})$ \Comment{式(8)(9)}
-            \State $Score(a) \gets \sum_i w_i \cdot score_i(a)$ \Comment{式(10)}
+            \State Compute $score_{\theta_a}$ from $\theta_{a,0}^{after}$
+            \State Compute $score_{d_{u,a}}$ from $\|P_a - P_u\|$
+            \State Compute $score_{U_c}$ from channel utilization
+            \State Compute $score_{n_a}$ from number of users
+            \State $Score(a) \gets \sum_i w_i \cdot score_i(a)$
         \EndFor
 
         \Statex
-        \State
-        \State $A_{cand}' \gets \text{top-3 APs by } Score(a)$ \Comment{式(11)}
-        \State $\{a^*, m^*\} \gets \arg\max_{(a,m), a \in A_{cand}'} \theta_{a,m}^{after}$ \Comment{式(12)}
+        \Statex \Comment{--- 最終選択 ---}
+        \State $A_{cand}' \gets$ top-3 APs by $Score(a)$
+        \State $\{a^*, m^*\} \gets
+        \arg\max_{a \in A_{cand}',\, \|m\|\le d_{th}}
+        \theta_{a,m}^{after}$
+
         \State \Return $\{a^*, m^*\}$
     \end{algorithmic}
     \caption{提案アルゴリズム}
     \label{alg:optimalAP}
 \end{algorithm}
 
+
 \subsection{チャネル使用率の推定}
 
 提案アルゴリズムでは，AP選択の評価指標の一つとしてチャネル使用率を用いる．
-チャネル使用率は，IEEE 802.11k規格においてBSS Load要素として定義されており，多くの商用APから定期的にビーコンフレーム内で広報される情報である．
-しかしながら，一部のAPやネットワーク構成においては，この情報が提供されない場合や，取得が困難な場合が存在する．
-そのため，本研究の提案手法の適用範囲を拡大し，より汎用的なシステムとして実装するためには，チャネル使用率を直接取得できない環境においても，
-他の観測可能なパラメータから間接的にチャネル使用率を推定する手法が必要となる．
+2.5節で述べた通り，無線LAN環境において，チャネル使用率はAPがどの程度通信に使用されているかを表す重要な指標であり，通信品質やスループットの低下を把握する上で不可欠である．
+802.11k 規格では，チャネル使用率以外にもいくつかの無線資源管理に関する情報が定義されており，無線LAN クライアントは，これらの情報を元に最適なAPを選択することができる．\\
+しかしながら，一部の無線LAN 環境においては，AP の機能・性能やネットワーク構成の制約などの理由から，このチャネル使用率に関する情報が提供されない場合や，取得が困難な場合がある．
+またエンドユーザーの端末といった改修が憚られる端末においては，特別なドライバなどが導入できない場合も多い．\\
 
 本節では，シミュレーション環境における評価を想定し，RSSI，ユーザの通信帯域幅，およびAP接続ユーザ数といった容易に取得可能なパラメータを用いて，チャネル使用率を推定する手法を提案する．
 
